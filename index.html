@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Spec2Spatial: A Multi-Scale Masking Network for Binaural Audio Synthesis</title>
+  <link rel="icon" type="image/x-icon" href="static/images/logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <!-- <style>
+    body {
+        background-image: url('static/images/222.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+  </style> -->
+  <style>
+    /* Style to center the content */
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+    }
+
+    .audio-container {
+      margin-top: 10px;
+    }
+
+    /* .audio-player {
+      width: 50%;
+      max-width: 300px;
+    } */
+
+    img {
+      width: 100%;
+      max-width: 500;
+    }
+
+  </style>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Spec2Spatial: A Multi-Scale Masking Network for Binaural Audio Synthesis</h1>
+                <div class="is-size-5 publication-authors">
+                        <!-- Paper authors -->
+                  <span class="author-block" style="color: #077caa;">
+                          Changjun He
+                  </span>,
+                  <span class="author-block" style="color: #077caa;">
+                    Wenjie Zhang
+                  </span>,
+                  <span class="author-block" style="color: #077caa;">
+                    Mingjiang Wang
+                  </span>,
+                  <span class="author-block" style="color: #077caa;">
+                    Weiping Chen<sup><span style="color: black;">*</span></sup>
+                  </span>
+
+                </div>
+
+                <div class="is-size-5 publication-authors">
+                  <!-- <span class="author-block"> Harbin Institute of Technology, Harbin Institute of Technology (Shenzhen)</span> -->
+                  <span class="eql-cntrb">Harbin Institute of Technology, Harbin Institute of Technology (Shenzhen)</span>
+                  <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding Author</small></span>
+                </div>
+                <div class="is-size-4 publication-authors">
+                  <span class="author-block"> IEEE Signal Processing Letters</span>
+
+                </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle" style="text-align: left;">
+        The following video demonstrates the performance of our model in binaural audio synthesis for unseen speakers. Please enjoy it.<br>
+        <span style="font-size: 15px; color: #555;">
+          <strong>Note:</strong> The silence video is from the dataset in BinauralSpeechSynthesis. 
+          <a href="https://github.com/facebookresearch/BinauralSpeechSynthesis/releases/tag/v1.0" target="_blank" style="font-size: 12px; color: #0066cc; vertical-align: super;">[1]</a>
+        </span>
+      </h2>
+      <video poster="" id="tree" autoplay controls muted loop height="100%" style="display: block; margin: 0 auto;">
+        <!-- Your video here -->
+        <source src="static/videos/demo.mp4"
+        type="video/mp4">
+      </video>
+
+      <p style="text-align: left; margin-top: 5px; padding: 2px; border: 2px solid #ff9800; border-radius: 5px; background-color: #fff3e0;width: 45%;">
+        ⚠️ Please wear headphones when watching this video.
+      </p>
+
+      
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+ 
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Spatial audio is an audio format that can provide both spatial awareness and realism. As a form of spatial audio, binaural audio is widely applied in scenarios such as virtual reality. Due to the limitations of traditional DSP methods, deep learning-based binaural audio synthesis has been extensively researched. This paper proposes Spec2Spatial: a multi-scale masking network for binaural audio synthesis. Specifically, we employ multi-scale gated multilayer perceptron to extract time-frequency features and focus on the relationship between the left and right ears. Additionally, the feature-wise linear modulation technique is employed, using the sound source position as a condition to adjust the time-frequency features of the binaural audio. Our proposed Spec2Spatial can synthesize results that closely resemble real binaural audios, and experimental results on the Binaural Speech dataset demonstrate that our method achieves state-of-the-art performance on the MRSTFT metric.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+
+<!-- 2x3 Image and Audio Grid Section -->
+<section class="section">
+  <div class="container">
+    <h1 class="title">Audios and Spectrograms</h1>
+    <div class="columns is-multiline">
+      <!-- Image 1 -->
+      <div class="column is-one-third">
+        <div class="image-container">
+          <div class="has-text-centered">
+            <h3>WaveNet</h3>
+          </div>
+          <img src="static/audio2/Wavenet.png" alt="Spectrogram 1" >
+          <div class="audio-container">
+            <audio controls >
+              <source src="static/audio2/Wavenet.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="column is-one-third">
+        <div class="image-container">
+          <div class="has-text-centered"> 
+            <h3>WarpNet</h3>
+          </div>
+          <img src="static/audio2/warpnet.png" alt="Spectrogram 2" >
+          <div class="audio-container">
+            <audio controls class="audio-player">
+              <source src="static/audio2/warpnet.wav" type="audio/wav">
+            </audio>
+          </div> 
+        </div>
+      </div>
+      <!-- Image 3 -->
+      <div class="column is-one-third">
+        <div class="image-container">
+          <div class="has-text-centered">
+            <h3>BinauralGrad</h3>
+          </div>
+          <img src="static/audio2/BinauralGrad.png" alt="Spectrogram 3" >
+          <div class="audio-container">
+            <audio controls class="audio-player">
+              <source src="static/audio2/BinauralGrad.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 4 -->
+      <div class="column is-one-third">
+        <div class="image-container">
+          <div class="has-text-centered">
+            <h3>NFS</h3>
+          </div>
+          <img src="static/audio2/nfs.png" alt="Spectrogram 4" >
+          <div class="audio-container">
+            <audio controls class="audio-player">
+              <source src="static/audio2/nfs.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+      <!-- Image 5 -->
+      <div class="column is-one-third">
+        <div class="image-container">
+          <div class="has-text-centered">
+            <h3>Spec2Spatial (Ours)</h3>
+          </div>
+          <img src="static/audio2/Spec2Spatial.png" alt="Spectrogram 5" >
+          <div class="audio-container">
+            <audio controls class="audio-player">
+              <source src="static/audio2/Spec2Spatial.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+      <!-- Image 6 -->
+      <div class="column is-one-third">
+        <div class="image-container">
+          <div class="has-text-centered">
+            <h3>Groundtruth</h3>
+          </div>
+          <img src="static/audio2/groundtruth.png" alt="Spectrogram 6" >
+          <div class="audio-container">
+            <audio controls class="audio-player">
+              <source src="static/audio2/groundtruth.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align: left; margin-top: 5px; margin-bottom: 30px; padding: 2px; border: 2px solid #ff9800; border-radius: 5px; background-color: #fff3e0;width: 31%;">
+        ⚠️ Please use headphones to listen to these audios.
+      </p> 
+      
+      <div style="font-size: 20px;">
+        
+          <strong>Note:</strong> From the spectrograms above, it can be observed that the binaural audio synthesized by our model is closest to the groundtruth. 
+          As stated in the paper, although BinauralGrad shows better Wave-L2 and Amplitude-L2 metrics, the spectrograms above show that its 
+          synthesized binaural audio has considerable spectral loss, particularly in the high-frequency range, compared to the groundtruth.
+          While NFS has a relatively better spectrogram, it tends to introduce some sibilant sounds when listened to.<br>
+   
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Audio Grid Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title" >Other samples from Binaural Speech Dataset</h1>
+      <table>
+        <!-- Repeat the row structure for the rest of the 35 audio files -->
+
+        <tr>
+          <th style="text-align: center; padding-right: 20px;"></th> <!-- 描述列 -->
+          <th style="text-align: center;">Mono</th>
+          <th style="text-align: center;">Groundtruth</th>
+          <th style="text-align: center;">DSP</th>
+          <th style="text-align: center;">WaveNet</th>
+          <th style="text-align: center;">WarpNet</th>
+          <th style="text-align: center;">NFS</th>
+          <th style="text-align: center;">BinauralGrad</th>
+          <th style="text-align: center;">Spec2Spatial (Ours)</th>
+          <!-- 继续添加其他表头描述 -->
+        </tr>
+        
+        <tr>
+          <td style="vertical-align: middle; text-align: center; padding-right: 10px;"><strong>Sample1</strong></td> <!-- 描述列 -->
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Mono/subject2_segment_1.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/groundtruth/2_segment_1.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/DSP/subject2_segment_1.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Wavenet/subject2_segment_1.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Warpnet/subject2_segment_1.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/nfs/2_segment_1.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/BinauralGrad/subject2_segment_1.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Spec2Spatial/subject2_segment_1.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="vertical-align: middle; text-align: center; padding-right: 10px;"><strong>Sample2</strong></td> <!-- 描述列 -->
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Mono/subject3_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/groundtruth/3_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/DSP/subject3_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Wavenet/subject3_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Warpnet/subject3_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/nfs/3_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/BinauralGrad/subject3_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Spec2Spatial/subject3_segment_6.wav" type="audio/wav"></audio></td>
+        </tr>
+ 
+        <tr>
+          <td style="vertical-align: middle; text-align: center; padding-right: 10px;"><strong>Sample3</strong></td> <!-- 描述列 -->
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Mono/subject5_segment_2.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/groundtruth/5_segment_2.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/DSP/subject5_segment_2.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Wavenet/subject5_segment_2.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Warpnet/subject5_segment_2.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/nfs/5_segment_2.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/BinauralGrad/subject5_segment_2.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Spec2Spatial/subject5_segment_2.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="vertical-align: middle; text-align: center; padding-right: 10px;"><strong>Sample4</strong></td> <!-- 描述列 -->
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Mono/subject4_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/groundtruth/4_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/DSP/subject4_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Wavenet/subject4_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Warpnet/subject4_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/nfs/4_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/BinauralGrad/subject4_segment_6.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Spec2Spatial/subject4_segment_6.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="vertical-align: middle; text-align: center; padding-right: 10px;"><strong>Sample5</strong></td> <!-- 描述列 -->
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Mono/subject6_segment_7.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/groundtruth/6_segment_7.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/DSP/subject6_segment_7.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Wavenet/subject6_segment_7.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Warpnet/subject6_segment_7.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/nfs/6_segment_7.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/BinauralGrad/subject6_segment_7.wav" type="audio/wav"></audio></td>
+          <td><audio controls style="width: 190px; margin-top: 10px;"><source src="static/audios/Spec2Spatial/subject6_segment_7.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <!-- Repeat for other rows as needed --> 
+      </table>
+
+      <p style="text-align: left; margin-top: 5px; margin-bottom: 30px; padding: 2px; border: 2px solid #ff9800; border-radius: 5px; background-color: #fff3e0;width: 30%;">
+        ⚠️ Please use headphones to listen to these audios.
+      </p>    
+      
+      <div style="font-size: 20px;">
+
+          <strong>Note:</strong> To provide readers with a more intuitive comparison, we also present the results of traditional DSP methods. 
+          The HRTF dataset we used was collected by Bill Gardner and Keith Martin from MIT <a href="https://sound.media.mit.edu/resources/KEMAR.html" target="_blank" style="font-size: 12px; color: #0066cc; vertical-align: super;">[2]</a>. 
+          This dataset was recorded using KEMAR at a distance of 1.4 meters. 
+          However, since we do not know detailed information about the specific room environment in which the Binaural Speech Dataset was collected, 
+          the DSP method cannot accurately simulate room reverberation. 
+          <br>
+
+      </div> 
+
+    </div>
+  </div>
+</section>
+<!-- End Audio Grid Section -->
+
+
+<!-- Audio Grid Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h1  style="font-size: 20px; text-align: left; font-style: italic; color: #000000;">
+        Our model can also perform binauralization on out-of-distribution audio such as music. 
+      </h1>
+      
+      <table>
+        <tr>
+          <td style="vertical-align: middle; text-align: center; padding-right: 10px;"><strong>Music1</strong></td> <!-- 描述列 -->
+          <td><audio controls style="width: 1300px; margin-top: 10px;"><source src="static/audio3/01.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="vertical-align: middle; text-align: center; padding-right: 10px;"><strong>Music2</strong></td> <!-- 描述列 -->
+          <td><audio controls style="width: 1300px; margin-top: 10px;"><source src="static/audio3/02.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <!-- Repeat for other rows as needed -->
+      </table>
+
+      <p style="text-align: left; margin-top: 5px; padding: 2px; border: 2px solid #ff9800; border-radius: 5px; background-color: #fff3e0;width: 30%;">
+        ⚠️ Please use headphones to listen to these audios. 
+      </p>      
+    </div>
+  </div>
+</section>
+<!-- End Audio Grid Section -->
+
+
+ 
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var audios = document.querySelectorAll('audio');
+  
+        audios.forEach(function(audio) {
+          audio.addEventListener('play', function() {
+            audios.forEach(function(otherAudio) {
+              if (otherAudio !== audio) {
+                otherAudio.pause();
+                otherAudio.currentTime = 0; // 可选：重置进度条
+              }
+            });
+          });
+        });
+      });
+    </script>
+    
+  </body>
+  </html>
