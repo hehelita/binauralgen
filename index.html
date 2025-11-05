@@ -130,6 +130,42 @@
                   <span class="author-block"> 2026 IEEE International Conference on Acoustics, Speech, and Signal Processing</span>
 
                 </div>
+                
+                <!-- Model Diagram -->
+                  <div class="section" style="padding-top: 60px; padding-bottom: 0;">
+                    <div class="container is-max-desktop">
+                      <div class="columns is-centered">
+                        <div class="column is-12 has-text-centered">
+                          <figure class="image">
+                            <img src="static/images/figure1.png" alt="Proposed End-to-End Binaural Audio Generation Model Architecture" style="max-width:100%; height:auto;"/>
+                          </figure>
+                          <p class="is-size-15" style="margin-top: 8px;">
+                            <strong>Figure 1.</strong> Diagrams of the overall structure of our proposed text to binaural audio model (TTBA).
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Model Diagram -->
+
+                    <!-- 模型配置 -->
+                    <div class="content has-text-left" style="margin-top: 25px; background-color:#f8f9fa; padding:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+                      <h3 class="title is-4" style="text-align:center; color:#0a6ebd;">Model Configuration</h3>
+                      <ul style="font-size:17px; line-height:1.6;">
+                        <li><strong>Transformer-ALM: </strong> Autoregressive Transformer with num_layers = 24, dim = 1536, num_heads = 24.</li>
+                        <li><strong>Text Encoder: </strong> T5-large with max_length = 128, cond_dim = 1536.</li>
+                        <li><strong>Audio Encoder/Decoder: </strong> EnCodec 16 kHz with 4 codebooks × 2048 bins.</li>                      
+                        <li>
+                          <strong>Optimizer: </strong> AdamW with learning rate = 5e-5, betas = (0.9, 0.999), weight decay = 1e-3;<br>
+                          <span style="margin-left: 89px;">Learning rate scheduler = InverseLR (inv_gamma = 1e6, power = 0.5, warmup = 0.99).</span>
+                        </li>
+                        <li><strong>Four Loss weights: </strong> cross_entropy_left = 0.25, cross_entropy_right = 0.25, cross_entropy_all = 0.5, dis = 0.3.</li>
+                        <li>
+                          <strong>Teacher Model: </strong> Autoregressive Transformer with num_layers = 48, dim = 1536, num_heads = 24; <br>
+                          <span style="margin-left: 125px;">Audio Encoder/Decoder: EnCodec 16 kHz with 4 codebooks × 2048 bins.</span>
+                      </li>
+                      </ul>
+                    </div>
 
             
           </div>
@@ -150,7 +186,7 @@
   <div class="hero-body">
     <div class="container">
 
-      <p class="subtitle" style="margin: -20px 0 80px; font-size:23px; line-height:1.55;">
+      <p class="subtitle" style="margin: -20px 0 80px; font-size:22px; line-height:1.55;">
         This demo page compares <strong>text-to-binaural audio</strong> generation by <em>Stable_audio_open</em>, <em>SpatialSonic</em>, <em>Ours</em> on <strong>BEWO-1M</strong> subsets (SS-Set, DS-Set, SD-Set, M-Set). 
         Using identical text prompts, it provides a fair, side-by-side evaluation of spatialization quality and consistency. 
         <strong>Please wear headphones while listening to these audios for the best experience.</strong>
